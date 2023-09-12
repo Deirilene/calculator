@@ -18,6 +18,8 @@ const styles = StyleSheet.create({
     },
     buttonDouble: {
         width: (Dimensions.get('window').width /4 ) * 2
+    },buttonTriplo: {
+        width: (Dimensions.get('window').width /4 ) * 3
     }
 
 })
@@ -25,7 +27,8 @@ const styles = StyleSheet.create({
 const Buttons = (props: any) => {
 
     const stylesButton:any = [styles.button] 
-    if (props.label === '0'){stylesButton.push(styles.buttonDouble)} 
+    if (props.label === '0' || props.label === 'AC'){stylesButton.push(styles.buttonDouble)}
+    if (props.label === 'AC'){stylesButton.push(styles.buttonTriplo)}  
     if (props.color2) {stylesButton.push(styles.operationButton)} 
 
     return (
